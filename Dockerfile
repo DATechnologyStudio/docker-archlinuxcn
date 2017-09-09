@@ -13,3 +13,4 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
           | grep -v 'en_US' | grep -v 'zh_CN' | grep -v 'locale.alias') ; do \
         rm -rf "/usr/share/locale/$file" ; done
 ENV LANG=zh_CN.UTF-8
+VOLUME /var/cache/pacman/pkg
