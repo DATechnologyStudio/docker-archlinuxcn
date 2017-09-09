@@ -1,4 +1,4 @@
-FROM finalduty/archlinux
+FROM base/archlinux
 
 ADD etc.tar /
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
