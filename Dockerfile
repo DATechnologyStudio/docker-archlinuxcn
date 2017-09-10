@@ -1,7 +1,8 @@
 FROM base/archlinux
 
 ADD etc.tar /
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+RUN chown root:root /etc -R \
+      && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
       && locale-gen \
       && pacman -Syu --noconfirm archlinuxcn-keyring \
         $(pacman -Ql | grep '/usr/share/locale/zh_CN' | cut -d' ' -f1 | uniq) \
